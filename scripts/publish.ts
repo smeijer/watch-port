@@ -21,4 +21,4 @@ execSync(`git add package.json package-lock.json`);
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const pkgJson = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'package.json'), 'utf-8'));
 
-execSync(`git commit -m 'chore: bump version to ${pkgJson.version}`);
+execSync(`git commit -m 'chore: bump version to ${pkgJson.version}'`);
