@@ -1,6 +1,6 @@
 {
 	"name": "watch-port",
-	"version": "0.0.2",
+	"version": "1.0.0",
 	"description": "run an arbitrary command when a server reboots",
 	"license": "MIT",
 	"repository": {
