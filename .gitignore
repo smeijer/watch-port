@@ -1,0 +1,11 @@
+node_modules
+yarn.lock
+/dist
+tsconfig.tsbuildinfo
+/.tshy
+/.tshy-build
+
+# all package.jsons, but not the one in the root
+**/package.json
+!/package.json
+.workflow-state

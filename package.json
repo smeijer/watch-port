@@ -1,0 +1,71 @@
+{
+	"name": "watch-port",
+	"version": "0.0.2",
+	"description": "run an arbitrary command when a server reboots",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/smeijer/watch-port.git"
+	},
+	"funding": "https://github.com/smeijer/watch-port?sponsor=1",
+	"author": "Stephan Meijer <stephan.meijer@gmail.com> (meijer.ws)",
+	"bugs": "https://github.com/smeijer/watch-port/issues",
+	"homepage": "https://github.com/smeijer/watch-port#readme",
+	"type": "module",
+	"engines": {
+		"node": ">=18"
+	},
+	"bin": {
+		"watch-port": "./bin/index.js"
+	},
+	"tshy": {
+		"exports": [],
+		"exclude": [
+			"src/**/*.test.ts"
+		],
+		"dialects": [
+			"esm"
+		]
+	},
+	"scripts": {
+		"build": "tshy",
+		"prepare": "npx simple-git-hooks",
+		"type-check": "tsc --noEmit",
+		"test": "borp",
+		"lint": "eslint --fix ."
+	},
+	"simple-git-hooks": {
+		"pre-commit": "pretty-quick --staged"
+	},
+	"files": [
+		"dist",
+		"license"
+	],
+	"keywords": [
+		"formdata",
+		"parse",
+		"stringify",
+		"expand"
+	],
+	"devDependencies": {
+		"@arethetypeswrong/cli": "^0.16.4",
+		"@smeijer/eslint-config": "^1.5.0",
+		"@smeijer/tsconfig": "^2.0.0",
+		"@types/node": "^22.7.4",
+		"borp": "^0.17.0",
+		"eslint-plugin-best-practices": "^0.5.0",
+		"pretty-quick": "^4.0.0",
+		"simple-git-hooks": "^2.11.1",
+		"tshy": "^3.0.2",
+		"tsx": "^4.19.1",
+		"typescript": "^5.6.2"
+	},
+	"dependencies": {
+		"net-socket": "^1.1.0",
+		"picoid": "^1.2.0",
+		"superjson": "^2.2.1"
+	},
+	"exports": {
+		"./package.json": "./package.json"
+	}
+}
