@@ -8,26 +8,26 @@ import net from 'net-socket';
 
 const { values } = parseArgs({
 	options: {
-		script: { type: 'string', short: 's' },
+		command: { type: 'string', short: 'c' },
 		port: { type: 'string', short: 'p', default: '3000' },
 		host: { type: 'string', short: 'h', default: '127.0.0.1' },
 	},
 });
 
-if (!values.script || !values.port) {
-	console.error('Usage: node watch.js --script <script-path> --port <port> [--host <host>]');
+if (!values.command || !values.port) {
+	console.error('Usage: watch-port --command <command> --port <port> [--host <host>]');
 	process.exit(1);
 }
 
-function runScript() {
-	const args = values.script!.split(' ');
+function runCommand() {
+	const args = values.command!.split(' ');
 	const command = args.shift();
 	spawn(command!, args, { stdio: 'inherit' });
 }
 
 const socket: n.Socket = net.connect({
 	port: Number(values.port),
-	host: '127.0.0.1',
+	host: values.host,
 });
 
 let connected = false;
@@ -35,7 +35,7 @@ let connected = false;
 socket.on('connect', () => {
 	connected = true;
 	console.log(`[watch-port] connected to ${values.host}:${values.port}`);
-	runScript();
+	runCommand();
 });
 
 socket.on('close', () => {
