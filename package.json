@@ -1,6 +1,6 @@
 {
 	"name": "watch-port",
-	"version": "1.1.0",
+	"version": "1.2.0",
 	"description": "run an arbitrary command when a server reboots",
 	"license": "MIT",
 	"repository": {
@@ -35,7 +35,7 @@
 		"lint": "eslint --fix ."
 	},
 	"simple-git-hooks": {
-		"pre-commit": "pretty-quick --staged"
+		"pre-commit": "npx pretty-quick --staged"
 	},
 	"files": [
 		"dist",
@@ -57,13 +57,10 @@
 		"pretty-quick": "^4.0.0",
 		"simple-git-hooks": "^2.11.1",
 		"tshy": "^3.0.2",
-		"tsx": "^4.19.1",
 		"typescript": "^5.6.2"
 	},
 	"dependencies": {
-		"net-socket": "^1.1.0",
-		"picoid": "^1.2.0",
-		"superjson": "^2.2.1"
+		"net-socket": "^1.1.0"
 	},
 	"exports": {
 		"./package.json": "./package.json"
