@@ -42,10 +42,10 @@
 		"license"
 	],
 	"keywords": [
-		"formdata",
-		"parse",
-		"stringify",
-		"expand"
+		"cli",
+		"devtool",
+		"automation",
+		"watch"
 	],
 	"devDependencies": {
 		"@arethetypeswrong/cli": "^0.16.4",
